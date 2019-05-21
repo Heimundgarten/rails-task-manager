@@ -1,0 +1,19 @@
+
+
+
+<div class="card p-5 my-3">
+  <h4>My task:</h4>
+  <p><%= @task.title %></p>
+  <h6>Details:</h6>
+  <p><%= @task.details %></p>
+  <h6>The task is?:</h6>
+    <% if @task.completed %>
+    <i class="far fa-check-square"></i>
+    <% else %>
+    <i class="fal fa-square"></i>
+    <% end %>
+</div>
+
+<%= link_to "Return to overview", tasks_path, class: "btn btn-primary btn-sm my-4" %>
+<%= link_to "Edit the task", task_edit_path(@task), class: "btn btn-primary btn-sm" %>
+

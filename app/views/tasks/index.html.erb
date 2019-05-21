@@ -1,0 +1,28 @@
+
+
+<div class="card p-3 my-3">
+  <ul>
+  <h3><%= "My tasks" %></h3>
+    <% @tasks.each do |task| %>
+      <p>
+        <% if task.completed %>
+        <i class="far fa-check-square"></i>
+        <% else %>
+        <i class="fal fa-square"></i>
+        <% end %>
+
+        <%= link_to task.title, task_path(task)%>
+        <%= link_to task_destroy_path(task),
+          method: :delete,
+          data: { confirm: "Are you sure?" } do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
+      </p>
+    <% end %>
+  </ul>
+
+</div>
+
+
+
+  <%= link_to "Add a new task", task_new_path, class: "btn btn-primary btn-sm my-3 "%>
